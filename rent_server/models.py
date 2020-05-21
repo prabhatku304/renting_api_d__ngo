@@ -12,7 +12,8 @@ class User(models.Model):
 
 class Message(models.Model):
 
-    title = models.CharField()
-    text = models.CharField()
+    title = models.CharField(max_length=64)
+    text = models.TextField()
 
-    
+    def __str__(self):
+        return f"{self.text} and {self.title}"
