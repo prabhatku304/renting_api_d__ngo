@@ -12,4 +12,4 @@ def message_api(request):
     if request.method == 'GET':
         serializer = MessageSerializer(message,many=True)
         print(serializer)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
